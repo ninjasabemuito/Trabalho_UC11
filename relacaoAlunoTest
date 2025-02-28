@@ -1,0 +1,32 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class relacaoAlunoTest {
+    public Aluno aluno1, aluno2, aluno3,aluno4;
+    @BeforeEach
+    public void setup(){
+        System.out.printf("Criando novos alunos :) ...");
+
+        aluno1  = new Aluno("Ney", 80.0); // Ney, nota: 80
+        aluno2 = new Aluno("Felipe", 40.0); // Felipe, nota: 40
+        aluno3 = new Aluno("Ariel",60.0); // Ariel, nota: 60
+        aluno4 = new Aluno("Leticia", 95.0); // Leticia, nota: 90
+    }
+    // Teste simples para verificar a nota do aluno1
+    @Test
+    public void testNotasSuficientes(){
+        System.out.printf("Testando se as notas são suficiente...");
+        String notas = relacaoAluno.calcularNotas(aluno1);
+        assertEquals("O aluno apresentou notas suficientes", notas, "Esperada, ele esta aprovado.");
+    }
+    // Teste para verificar o descanso do aluno 2
+    @Test
+    public  void testNotasInsuficiente(){
+        System.out.printf("calculando se a nota é insuficiente...");
+        String descanso = relacaoAluno.calcularNotas(aluno2);
+        assertEquals("O aluno tirou notas insuficientes,", descanso, "Recuperação necessaria");
+    }
+
+}
