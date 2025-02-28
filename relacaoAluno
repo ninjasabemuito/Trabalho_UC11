@@ -1,0 +1,15 @@
+public class relacaoAluno {
+        public static String calcularNotas(Aluno aluno){
+            if(aluno.getNotas() <= 30){
+                return "O aluno tirou notas insuficientes,";
+            }else if (aluno.getNotas() <= 50){
+                return "O aluno tirou notas insuficientes,";
+            } else if (aluno.getNotas() >=75){
+                return "O aluno apresentou notas suficientes";
+            } else if (aluno.getNotas() ==100){
+                return "Parabéns, você tirou a nota mais alta possível!";
+            } else {
+                return "Suas notas não foram achadas no sistema, tente novamente!";
+            }
+        }
+    }
